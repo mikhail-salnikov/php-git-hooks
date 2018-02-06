@@ -80,7 +80,7 @@ class CommitMsgHandler implements CommandHandlerInterface
     private function isValidCommitMessage($regularExpression, $commitMessage)
     {
         //remove comments
-        $commitMessage = preg_replace("/^#.*$/mg", "", $commitMessage);
+        $commitMessage = preg_replace("/^#.*(\n|$)/m", "", $commitMessage);
 
         return $this->mergeValidator->isMerge() || preg_match(sprintf('/%s/u', $regularExpression), $commitMessage);
     }
