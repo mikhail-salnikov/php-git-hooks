@@ -11,7 +11,7 @@ final class BadJobLogoResponse
      */
     public static function paint($message)
     {
-        return sprintf("<fg=red;options=bold;>
+        return sprintf("\e[1;31m
                 @@@@@@@@@@@@@@@
              @@@@@@@@@@@@@@@@@@@@
            @@@@@@@@  @@@@@  @@@@@@@
@@ -27,7 +27,7 @@ final class BadJobLogoResponse
            @@@@@@@@@@@@@@@@@@@@@@@@@
              @@@@@@@@@@@@@@@@@@@@@
                 @@@@@@@@@@@@@@@
-        </fg=red;options=bold;>\n
-        <fg=white;bg=red;options=bold;>   %s    </fg=white;bg=red;options=bold;>\n", $message);
+        \n
+           %s    [0;0m\n", $message);
     }
 }
